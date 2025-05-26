@@ -22,6 +22,17 @@ A **responsive clone of the Netflix India landing page**, built using **HTML, CS
 ## 🛠️ Tech Stack
 
 - **Frontend**: HTML5, CSS3, JavaScript (Vanilla)
+
+- ## 📂 Project Structure
+- Netflix_Landing_Page/
+├── index.html
+├── style.css
+├── script.js
+├── images/
+│ └── [Posters, background images, thumbnails]
+├── videos/
+│ └── demo.mp4
+└── README.md
 - **Responsive Design**: Flexbox, Grid, Media Queries
 
 ---
