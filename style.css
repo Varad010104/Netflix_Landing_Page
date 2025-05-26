@@ -1,0 +1,723 @@
+@import url("https://fonts.googleapis.com/css2?family=Helvetica+Neue:wght@400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+body,
+html {
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  position: relative;
+  z-index: 10;
+}
+
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(to top, rgb(0 0 0 / 83%), rgb(0 0 0 / 76%)),
+    url(./Images/netflix_Background.jpg);
+  background-size: cover;
+  background-position: center;
+  z-index: 2;
+}
+
+#lightModeimg{
+  height: 3rem;
+    cursor: pointer;
+}
+
+header {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 119px;
+  flex-wrap: wrap;
+}
+
+#netflixLogo {
+  height: 8rem;
+  width: 15rem;
+  cursor: pointer;
+}
+
+.navButtons {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.language select {
+  padding: 8px;
+  border-radius: 4px;
+  border: none;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  font-size: 14px;
+}
+
+.sign-in button {
+  background-color: red;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+.sign-in button::after {
+  content: "";
+  position: absolute;
+  background-color: white;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 100%;
+  z-index: -1;
+  transition: top 0.3s ease;
+}
+
+.sign-in button:hover::after {
+  top: 0;
+}
+
+.sign-in button:hover {
+  color: red;
+}
+
+#page1 {
+  position: relative;
+  z-index: 3;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 0 20px;
+  overflow: hidden;
+  width: 100%;
+}
+
+#page1 h1 {
+  font-size: 3rem;
+  font-weight: 800;
+}
+
+#page1 h5 {
+  font-size: 1.25rem;
+  margin-top: 20px;
+}
+
+#page1 p {
+  font-size: 1.125rem;
+  margin: 20px 0;
+}
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+input[type="email"] {
+  padding: 16px;
+  font-size: 1rem;
+  border-radius: 4px;
+  width: 300px;
+  max-width: 80vw;
+  background: #ffffff14;
+  border: 1px solid white;
+  color: white;
+  font-weight: 500;
+}
+
+.getStarted button {
+  background-color: red;
+  color: white;
+  padding: 16px 24px;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.getStarted button::after {
+  content: " ";
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-color: white;
+  left: 0;
+  z-index: -1;
+  bottom: -53px;
+  transition: all ease 0.2s;
+  border-radius: 50%;
+}
+
+.getStarted button:hover::after {
+  bottom: 0;
+  border-radius: 0;
+}
+
+.getStarted button:hover {
+  color: red;
+}
+
+#page2 {
+  min-height: 90vh;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+  background-color: black;
+  color: white;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 2vw 8vw;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+#page2::after {
+  content: "";
+  height: 4%;
+  width: 107%;
+  background: linear-gradient(to top, #ff0000, #000000);
+  z-index: -1;
+  position: absolute;
+  bottom: 99%;
+  filter: blur(16px);
+  border-radius: 36%;
+  animation-name: anmie2;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+  left: 11px;
+}
+
+@keyframes anmie2 {
+  from {
+    transform: translate(0%, -11%);
+  }
+  to {
+    transform: translate(-1%, 4%);
+  }
+}
+
+#trendingNow {
+  padding-left: 2rem;
+}
+
+#trendingNow > h4 {
+  font-size: 2rem;
+  font-weight: 300;
+}
+
+#top10 {
+  display: grid;
+  grid-template-rows: repeat(5, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  column-gap: 50rem;
+  padding: 2rem;
+}
+
+#top10 > div {
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+#top10 > div > img {
+  width: 100%;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+  position: relative;
+}
+/* #top10>div::after{
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: red;
+    left: 107%;
+    display: none;
+} */
+
+#fixed-video-container {
+  height: 24vw;
+  width: 43vw;
+  border-radius: 10px;
+  z-index: 99;
+  left: 28%;
+  top: 20%;
+
+  position: fixed;
+  border: solid 5px white;
+  display: none;
+}
+
+#fixed-video-container video {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+#fixed-text-container {
+  min-height: 9vw;
+  width: 30vw;
+  border-radius: 10px;
+  z-index: 99;
+  padding: 1rem;
+  left: 49%;
+  top: 24%;
+  position: fixed;
+  border-radius: 4%;
+  background: linear-gradient(135deg, #691841, #ff2200);
+  display: none;
+}
+
+#fixed-text-container h3 {
+  color: white;
+  text-align: center;
+}
+.movie-card {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+.movie-card video {
+  display: none;
+}
+
+.number1 {
+  height: 9%;
+  width: 6%;
+  position: absolute;
+  left: 70.5%;
+  top: -13.4%;
+  z-index: 7;
+  font-size: 6.8rem;
+  font-weight: 900;
+  color: black;
+  -webkit-text-stroke: 2px white;
+}
+.number2 {
+  height: 9%;
+  width: 6%;
+  position: absolute;
+  left: 62.5%;
+  top: -13.4%;
+  z-index: 7;
+  font-size: 6.8rem;
+  font-weight: 900;
+  color: black;
+  -webkit-text-stroke: 2px white;
+}
+.number3 {
+  height: 9%;
+  width: 6%;
+  position: absolute;
+  left: 63.5%;
+  top: -12.4%;
+  z-index: 7;
+  font-size: 6.8rem;
+  font-weight: 900;
+  color: black;
+  -webkit-text-stroke: 2px white;
+}
+.number4 {
+  height: 9%;
+  width: 6%;
+  position: absolute;
+  left: 62.5%;
+  top: -12.4%;
+  z-index: 7;
+  font-size: 6.8rem;
+  font-weight: 900;
+  color: black;
+  -webkit-text-stroke: 2px white;
+}
+.number5 {
+  height: 6%;
+  width: 9%;
+  position: absolute;
+  left: 61.5%;
+  top: -12.4%;
+  z-index: 7;
+  font-size: 6.8rem;
+  font-weight: 900;
+  color: black;
+  -webkit-text-stroke: 2px white;
+}
+.number6 {
+  height: 6%;
+  width: 9%;
+  position: absolute;
+  left: 62.5%;
+  top: -13.4%;
+  z-index: 7;
+  font-size: 6.8rem;
+  font-weight: 900;
+  color: black;
+  -webkit-text-stroke: 2px white;
+}
+.number7 {
+  height: 6%;
+  width: 9%;
+  position: absolute;
+  left: 63.5%;
+  top: -13.4%;
+  z-index: 7;
+  font-size: 6.8rem;
+  font-weight: 900;
+  color: black;
+  -webkit-text-stroke: 2px white;
+}
+.number8 {
+  height: 6%;
+  width: 9%;
+  position: absolute;
+  left: 62.5%;
+  top: -13.4%;
+  z-index: 7;
+  font-size: 6.8rem;
+  font-weight: 900;
+  color: black;
+  -webkit-text-stroke: 2px white;
+}
+.number9 {
+  height: 6%;
+  width: 9%;
+  position: absolute;
+  left: 62.5%;
+  top: -12.4%;
+  z-index: 7;
+  font-size: 6.8rem;
+  font-weight: 900;
+  color: black;
+  -webkit-text-stroke: 2px white;
+}
+.number10 {
+  height: 6%;
+  width: 9%;
+  position: absolute;
+  left: 38.5%;
+  top: -10.4%;
+  z-index: 7;
+  font-size: 5.8rem;
+  font-weight: 900;
+  color: black;
+  -webkit-text-stroke: 2px white;
+}
+
+#top10 > div:hover > img {
+  transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  header {
+    padding: 0 20px;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  #page1 h1 {
+    font-size: 2rem;
+  }
+
+  #page1 h5,
+  #page1 p {
+    font-size: 1rem;
+  }
+
+  .getStarted button,
+  input[type="email"] {
+    width: 100%;
+  }
+}
+
+#page3 {
+  padding: 43px 104px;
+  max-width: 100%;
+  margin: 3vw;
+  min-height: 50vh;
+  position: relative;
+  z-index: 4;
+}
+
+#page3 h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: white;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.card {
+  background: linear-gradient(135deg, #192144, #210e17);
+  border-radius: 15px;
+  padding: 20px;
+  position: relative;
+  min-height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: white;
+  z-index: 2;
+}
+
+.card p {
+  flex: 1;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: white;
+  z-index: 2;
+}
+
+.card img {
+  width: 40px;
+  align-self: flex-end;
+  color: linear-gradient(135deg, #192144, #210e17);
+  z-index: 2;
+}
+
+#overlay {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(135deg, #691841, #ff2200);
+  position: absolute;
+  left: 0;
+  bottom: 100%;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+.card:hover #overlay {
+  bottom: 0;
+  border-radius: 15px;
+}
+
+#Gola {
+  height: 71%;
+  width: 37%;
+  background: linear-gradient(to top, #ff0000, #000000);
+  position: absolute;
+  bottom: 99%;
+  border-radius: 50%;
+  animation-name: anmie3;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+  left: 29%;
+  top: 292%;
+  z-index: 3;
+}
+
+@keyframes anmie3 {
+  from {
+    filter: blur(20px);
+    transform: translate(10%, -10%) skew(0);
+  }
+  to {
+    filter: blur(30px);
+    transform: translate(-10%, 10%) skew(-12deg);
+  }
+}
+#page4 {
+  padding: 43px 104px;
+  width: 90%;
+  margin: 3vw;
+  min-height: 100vh;
+  position: relative;
+  z-index: 4;
+  color: white;
+}
+
+#page4 > h1 {
+  font-size: 2rem;
+  padding: 2rem 0;
+}
+.faq-container {
+  height: 6rem;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid white;
+}
+
+#overlay2 {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(#0101019e, rgba(255, 0, 0, 0.621));
+  bottom: 100%;
+  z-index: 1;
+  left: 0;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.faq-container:hover #overlay2 {
+  z-index: -1;
+  bottom: 0;
+  border-radius: 10px;
+}
+.elem {
+  height: 100%;
+  width: 100%;
+}
+.elem > h2 {
+  font-size: 2rem;
+  padding-top: 1rem;
+}
+
+footer {
+  padding: 43px 104px;
+  width: 90%;
+  margin: -4rem 3vw;
+  min-height: 58vh;
+  position: relative;
+  z-index: 4;
+  color: grey;
+  font-size: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.footerContainer{
+  
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  grid-template-rows: repeat(4,1fr);
+  column-gap: 12rem;
+  row-gap: 3rem;
+
+}
+
+.footerContainer>a{
+  color: gray;
+}
+
+footer >h4{
+  font-size: 1.4rem;
+}
+
+#copyWrite{
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+
+@media (max-width: 1024px) {
+  header {
+    padding: 15px 30px;
+  }
+  nav ul {
+    gap: 20px;
+  }
+  .cards-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .trending {
+    padding: 30px;
+  }
+  .faq {
+    margin: 30px;
+    padding: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px 20px;
+  }
+  nav ul {
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 10px;
+  }
+  .cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+  .trending {
+    padding: 20px;
+  }
+  .faq {
+    margin: 20px;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  header .logo {
+    font-size: 22px;
+  }
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  .cards-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .trending h2 {
+    font-size: 24px;
+  }
+  .trending {
+    padding: 15px;
+  }
+  .faq {
+    margin: 15px;
+    padding: 15px;
+  }
+  .faq h2 {
+    font-size: 22px;
+  }
+}
+
+

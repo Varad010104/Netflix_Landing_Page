@@ -1,0 +1,13 @@
+<!--- div tag -->
+1. Div tag is like a container
+
+<!-- Symantic Tag -->
+<nav>
+<main> 
+<header>
+<footer>
+<section>
+<aside>
+<article>
+
+Naukari roj apply on subha - 8 baje
