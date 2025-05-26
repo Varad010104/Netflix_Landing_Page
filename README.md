@@ -25,7 +25,13 @@ A **responsive clone of the Netflix India landing page**, built using **HTML, CS
 - **Responsive Design**: Flexbox, Grid, Media Queries
 
 ---
+This is **missing** the closing ``` after `README.md`, so the markdown will render incorrectly.
 
+---
+
+### ✅ Correct version (copy this):
+
+```markdown
 ## 📂 Project Structure
 
 Netflix_Landing_Page/
@@ -33,8 +39,9 @@ Netflix_Landing_Page/
 ├── style.css
 ├── script.js
 ├── images/
-│ └── [Posters, background images, thumbnails]
+│   └── [Posters, background images, thumbnails]
 ├── videos/
-│ └── demo.mp4
+│   └── demo.mp4
 └── README.md
+
 
