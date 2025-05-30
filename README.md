@@ -1,4 +1,4 @@
-# 🎬 Netflix_Landing_Page
+# 🎬 Netflix_Landing_Page https://customizenetfliyxlandingpage.netlify.app/
 
 A **responsive clone of the Netflix India landing page**, built using **HTML, CSS, and JavaScript**. This project replicates the design and interactivity of the official Netflix UI and adapts smoothly to desktop, tablet, and mobile screens for a modern, seamless user experience.
 
